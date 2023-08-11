@@ -11,7 +11,7 @@ import (
 
 func Connect() *gorm.DB {
 	dsn := "postgres://fcwears_user:cpFfKGaLhVbfs5jmYPqmnkm81gPcm6kQ@dpg-cj3lcgd9aq0e0q7sccm0-a.frankfurt-postgres.render.com/fcwears"
-	userslog, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
+	userslog, userslogerr := gorm.Open(postgres.Open(dsn), &gorm.Config{})
 	if userslogerr != nil {
 		fmt.Println("Failed to connect to database")
 	}
